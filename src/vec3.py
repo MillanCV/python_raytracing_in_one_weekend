@@ -23,22 +23,25 @@ class Vec3:
         self.e[key] = value
         
     def __iadd__(self, v):
-        self.e[0] += v.e[0]
-        self.e[1] += v.e[1]
-        self.e[2] += v.e[2]
-        return self
+        return Vec3(
+            e0= self.e[0] + v.e[0],
+            e1= self.e[1] + v.e[1],
+            e2= self.e[2] + v.e[2]
+        )
 
     def __imul__(self, t):
-        self.e[0] *= t
-        self.e[1] *= t
-        self.e[2] *= t
-        return self
+        return Vec3(
+            e0= self.e[0] * t,
+            e1= self.e[1] * t,
+            e2= self.e[2] * t
+        )
 
     def __itruediv__(self, t):
-        self.e[0] /= t
-        self.e[1] /= t
-        self.e[2] /= t
-        return self
+        return Vec3(
+            e0= self.e[0] / t,
+            e1= self.e[1] / t,
+            e2= self.e[2] / t
+        )
 
     def length(self):
         return (self.e[0]**2 + self.e[1]**2 + self.e[2]**2)**0.5
