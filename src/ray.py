@@ -8,7 +8,7 @@ class Ray:
     def origin(self):
         return self.origin
     
-    def direction(self):
+    def direct(self):
         return self.direction
     
     def at(self, t: int):

@@ -22,21 +22,28 @@ class Vec3:
     def __setitem__(self, key, value):
         self.e[key] = value
         
-    def __iadd__(self, v):
+    def __add__(self, v):
         return Vec3(
             e0= self.e[0] + v.e[0],
             e1= self.e[1] + v.e[1],
             e2= self.e[2] + v.e[2]
         )
+        
+    def __sub__(self, v):
+        return Vec3(
+            e0= self.e[0] - v.e[0],
+            e1= self.e[1] - v.e[1],
+            e2= self.e[2] - v.e[2]
+        )
 
-    def __imul__(self, t):
+    def __mul__(self, t):
         return Vec3(
             e0= self.e[0] * t,
             e1= self.e[1] * t,
             e2= self.e[2] * t
         )
 
-    def __itruediv__(self, t):
+    def __truediv__(self, t):
         return Vec3(
             e0= self.e[0] / t,
             e1= self.e[1] / t,
@@ -52,6 +59,8 @@ class Vec3:
     def __str__(self):
         return f"{self.e[0]} {self.e[1]} {self.e[2]}"
     
+def unit_vector(vector: Vec3) -> Vec3:
+    return vector/vector.length()
         
 Point3 = Vec3
 Color = Vec3
