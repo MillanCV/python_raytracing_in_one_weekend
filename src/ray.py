@@ -5,10 +5,10 @@ class Ray:
         self.origin = origin
         self.direction = direction
         
-    def origin(self):
+    def get_origin(self):
         return self.origin
     
-    def direct(self):
+    def get_direction(self):
         return self.direction
     
     def at(self, t: int):

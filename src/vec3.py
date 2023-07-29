@@ -60,7 +60,7 @@ class Vec3:
         return f"{self.e[0]} {self.e[1]} {self.e[2]}"
     
     @staticmethod
-    def dot(u: Vec3, v: Vec3)
+    def dot(u, v):
         return (u.e[0] * v.e[0] + u.e[1] * v.e[1]+ u.e[2] * v.e[2])
     
 def unit_vector(vector: Vec3) -> Vec3:
